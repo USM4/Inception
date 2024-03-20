@@ -1,20 +1,16 @@
-FROM debian:buster
+FROM debian:bullseye
 
 RUN apt-get update
 
-RUN apt-get upgrade
+RUN apt-get -y install wget
 
-RUN apt-get install wget -y
+#set fpm listening config
 
 #PHP7.3.31
 RUN apt-get install -y php php-fpm php-mysql mariadb-client
 
-RUN wget https://fr.wordpress.org/wordpress-6.0-fr_FR.tar.gz -P /var/www
+COPY conf/auto_config.sh .
 
-RUN cd /var/www && tar -xvf wordpress-6.0-fr_FR.tar.gz && rm wordpress-6.0-fr_FR.tar.gz
-
-RUN chown -R root:root wordpress/
+CMD ["./auto_config.sh"]
 
 
-
- 
