@@ -1,9 +1,9 @@
 #!/bin/bash
 
-service mysql start
+service mariadb start
 
 #for connection to the socket it takes time (heavy load, establishing connection)
-sleep 2
+sleep 10
 
 MYSQL_USER="oredoine"
 MYSQL_PASSWORD="xyz"
@@ -17,5 +17,8 @@ mysql -e "CREATE USER '$DB_USER'@'localhost' IDENTIFIED BY '$DB_PASSWORD';"
 mysql -e "GRANT ALL PRIVILEGES ON $DB_NAME.* TO '$DB_USER'@'localhost' IDENTIFIED BY '$DB_PASSWORD';"
 mysql -e "FLUSH PRIVILEGES;"
 
-service mysql stop
+mysqladmin -u root -p$MYSQL_ROOT_PWD shutdown
+exec mysqld_safe
 echo "Database configuration completed."
+
+# sleep infinity

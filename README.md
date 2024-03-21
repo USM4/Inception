@@ -11,3 +11,10 @@ kaycomuniqui l webserver m3a l client (browser) 3an tari9 l http, katsayb wahd l
 FAST CGI:
 CGI ki sayb process jdid ki loadi modules kamline w kidir bzf dl5dma fach kibghi yprocessi kola script, fastCGI makidirch hadchi, kib9a mrunni as a daemon(bg) donc ki7eyed l overhead dyal creating a process w loading memory w everything f every request
 
+>access to mariadb instructions
+-> go inside the container
+-> run mysql -u -root 
+execute those querys
+-> show databases;
+-> select user from mysql.user;
+->

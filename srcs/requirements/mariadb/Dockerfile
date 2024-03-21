@@ -6,10 +6,11 @@ RUN apt install vim -y
 
 RUN apt-get install mariadb-server -y
 
-COPY conf/50-server.cnf /etc/mysql/mariadb/50-server.cnf
+COPY conf/50-server.cnf /etc/mysql/mariadb.conf.d/50-server.cnf
 
-COPY conf/maria.sh ./
+COPY tools/maria.sh ./
 
 RUN chmod +x maria.sh
 
 CMD ["./maria.sh"]
+# CMD ["sleep", "infinity"]
