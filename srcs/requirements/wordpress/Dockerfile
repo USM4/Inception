@@ -12,7 +12,10 @@ RUN apt-get install -y php php-fpm php-mysql mariadb-client
 
 COPY conf/auto_config.sh .
 
+RUN chmod +x auto_config.sh
+
 CMD ["./auto_config.sh"]
+# CMD ["sleep" , "infinity"]
 
 
 

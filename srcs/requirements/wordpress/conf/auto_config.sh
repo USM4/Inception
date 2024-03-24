@@ -7,21 +7,25 @@ mv wp-cli.phar /usr/local/bin/wp
 
 mkdir /run/php
 
-cd /var/www/html
-wp core download --allow-root
 
+mkdir -p var/www/html
+cd var/www/html
+
+wp core download --allow-root
 mv wp-config-sample.php wp-config.php
 
-DB_NAME = 
-MARIA_DB_USER = 
-MARIA_DB_USER_PASSWORD =
-DOMAIN_NAME =  
-WP_ADMIN_USER = 
-WP_ADMIN_PASSWORD = 
-WP_ADMIN_EMAIL = 
-WP_USER = 
-WP_USER_EMAIL = 
-WP_USER_PASSWORD = 
+# sleep infinity
+DB_NAME="xx"
+MARIA_DB_USER="xx"
+MARIA_DB_USER_PASSWORD="xx"
+DOMAIN_NAME="xx"
+WP_ADMIN_USER="xx"
+WP_ADMIN_PASSWORD="xx"
+WP_ADMIN_EMAIL="xx"
+WP_USER="xx"
+WP_USER_EMAIL="xx"
+WP_USER_PASSWORD="xx"
+
 wp config set SERVER_PORT 3306 --allow-root
 wp config set DB_NAME $DB_NAME --allow-root --path=/var/www/html
 wp config set DB_USER $MARIA_DB_USER --allow-root --path=/var/www/html
