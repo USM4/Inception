@@ -15,16 +15,7 @@ wp core download --allow-root
 mv wp-config-sample.php wp-config.php
 
 # sleep infinity
-DB_NAME="xx"
-MARIA_DB_USER="xx"
-MARIA_DB_USER_PASSWORD="xx"
-DOMAIN_NAME="xx"
-WP_ADMIN_USER="xx"
-WP_ADMIN_PASSWORD="xx"
-WP_ADMIN_EMAIL="xx"
-WP_USER="xx"
-WP_USER_EMAIL="xx"
-WP_USER_PASSWORD="xx"
+
 
 wp config set SERVER_PORT 3306 --allow-root
 wp config set DB_NAME $DB_NAME --allow-root --path=/var/www/html

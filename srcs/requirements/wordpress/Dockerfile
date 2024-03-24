@@ -15,7 +15,3 @@ COPY conf/auto_config.sh .
 RUN chmod +x auto_config.sh
 
 CMD ["./auto_config.sh"]
-# CMD ["sleep" , "infinity"]
-
-
-
