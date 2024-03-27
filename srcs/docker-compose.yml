@@ -9,7 +9,7 @@ services:
     build: ./requirements/nginx
     env_file: .env
     volumes:
-      - wordpress:/var/www/html/html/
+      - wordpress:/var/www/html
     restart: on-failure
     ports:
       - "443:443"
@@ -23,8 +23,6 @@ services:
     volumes:
       - mariadb:/var/lib/mysql
     restart: on-failure
-    expose:
-      - "3306"
 
   wordpress:
     container_name: wordpress
@@ -33,10 +31,8 @@ services:
     build: ./requirements/wordpress
     env_file: .env 
     volumes:
-      - wordpress:/var/www/wordpress/html/
+      - wordpress:/var/www/wordpress/html
     restart: on-failure
-    expose:
-      - "9000"
 
 networks:
   inception:
@@ -44,4 +40,14 @@ networks:
 
 volumes:
   wordpress:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/Users/oredoine/data/wordpress'
   mariadb:
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/Users/oredoine/data/mariadb'
