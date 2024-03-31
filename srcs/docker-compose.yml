@@ -2,7 +2,7 @@ version: '3'
 services:
   nginx:
     container_name: nginx
-    networks: 
+    networks:
       - inception
     depends_on:
       - wordpress
@@ -23,20 +23,20 @@ services:
     volumes:
       - mariadb:/var/lib/mysql
     restart: on-failure
+    # ports:
+    #   - "3306:3306"
 
   wordpress:
+    depends_on:
+      - mariadb
     container_name: wordpress
     networks: 
       - inception
     build: ./requirements/wordpress
     env_file: .env 
     volumes:
-      - wordpress:/var/www/wordpress/html
+      - wordpress:/var/www/html
     restart: on-failure
-
-networks:
-  inception:
-    driver: bridge
 
 volumes:
   wordpress:
@@ -44,10 +44,14 @@ volumes:
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/Users/oredoine/data/wordpress'
+      device: '/home/oredoine/data/wordpress'
   mariadb:
     driver: local
     driver_opts:
       type: 'none'
       o: 'bind'
-      device: '/Users/oredoine/data/mariadb'
+      device: '/home/oredoine/data/mariadb'
+
+networks:
+  inception:
+    driver: bridge 

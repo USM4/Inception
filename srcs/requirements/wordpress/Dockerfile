@@ -2,13 +2,13 @@ FROM debian:bullseye
 
 RUN apt-get update
 
+RUN apt install curl -y
+
 RUN apt-get -y install wget
 
-RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-#set fpm listening config
+RUN apt-get install -y php php-fpm php-mysql mariadb-client
 
 #PHP7.3.31
-RUN apt-get install -y php php-fpm php-mysql mariadb-client
 
 COPY conf/auto_config.sh .
 
