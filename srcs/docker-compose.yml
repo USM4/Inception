@@ -1,6 +1,7 @@
 version: '3'
 services:
   nginx:
+    image: nginx
     container_name: nginx
     networks:
       - inception
@@ -15,6 +16,7 @@ services:
       - "443:443"
 
   mariadb:
+    image: mariadb
     container_name: mariadb
     networks:
       - inception
@@ -27,6 +29,7 @@ services:
   wordpress:
     depends_on:
       - mariadb
+    image: wordpress
     container_name: wordpress
     networks: 
       - inception
