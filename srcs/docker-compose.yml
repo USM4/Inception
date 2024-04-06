@@ -34,7 +34,7 @@ services:
     networks: 
       - inception
     build: ./requirements/wordpress
-    env_file: .env 
+    env_file: .env
     volumes:
       - wordpress:/var/www/html
     restart: on-failure
@@ -55,4 +55,4 @@ volumes:
 
 networks:
   inception:
-    driver: bridge 
+    driver: bridge
