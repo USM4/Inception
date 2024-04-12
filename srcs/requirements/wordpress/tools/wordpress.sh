@@ -22,11 +22,8 @@ wp config set DB_USER $DB_USER --allow-root --path=/var/www/html
 wp config set DB_PASSWORD $DB_PASSWORD --allow-root --path=/var/www/html
 wp config set DB_HOST 'mariadb:3306' --allow-root --path=/var/www/html
 
-# wp core install --url=$DOMAIN_NAME --title=INCEPTION --admin_user=$WP_ADMIN_USER --admin_password=$DB_PASSWORD --admin_email=$WP_ADMIN_EMAIL --allow-root --path=/var/www/html
-
-wp core install --allow-root --url=${DOMAIN_NAME} --title={} --admin_user=${WP_ADMIN_USER} --admin_password=${WP_ADMIN_PASSWORD} \
+wp core install --allow-root --url=${DOMAIN_NAME} --title="inception" --admin_user=${WP_ADMIN_USER} --admin_password=${WP_ADMIN_PASSWORD} \
     --admin_email=${WP_ADMIN_EMAIL} --skip-email --path='/var/www/html'
-
 wp user create $WP_USER $WP_USER_EMAIL --role=author --user_pass=$WP_USER_PASSWORD --allow-root --path=/var/www/html
 
 /usr/sbin/php-fpm7.4 -F

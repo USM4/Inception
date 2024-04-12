@@ -24,3 +24,63 @@ execute those querys
 
 **TLS/SSL**
 >SSL (Secure Sockets Layer) and TLS (Transport Layer Security) are cryptographic protocols designed to provide secure communication over a computer network. They establish an encrypted connection between a client (such as a web browser) and a server (such as a website), ensuring that data transmitted between them remains confidential and cannot be tampered with.
+
+**WHAT HAPPENS WHEN A PHP REQUEST SENT TO NGINX**  
+>>Request Arrives at NGINX:  
+When a request is made to the NGINX server, it first listens for incoming connections on port 443 (HTTPS) as specified   by listen 443 ssl;.    
+SSL/TLS Handshake:    
+  
+Once a connection is established, NGINX performs the SSL/TLS handshake with the client using the specified SSL protocols   (ssl_protocols TLSv1.3;).    
+It presents the SSL certificate (/etc/nginx/ssl/inception.crt) and its corresponding private key (/etc/nginx/ssl/  inception.key) to the client.    
+Determine Server Block:    
+  
+NGINX evaluates the server_name directive to determine which server block should handle the request. In this case, if   the request matches the domain oredoine.42.fr, this server block will be used.  
+Serve Static Files:  
+  
+If the requested resource is a static file (e.g., HTML, CSS, JavaScript), NGINX serves it directly from the specified   root directory (/var/www/html).  
+Process PHP Files:  
+  
+If the requested resource is a PHP file (identified by the location block location ~ \.php$ { ... }):  
+NGINX includes the snippets/fastcgi-php.conf file, which contains FastCGI configurations for handling PHP requests.  
+NGINX includes the snippets/fastcgi-php.conf file, which contains FastCGI configurations for handling PHP requests.
+NGINX includes the snippets/fastcgi-php.conf file, which contains FastCGI configurations for handling PHP requests.
+NGINX forwards the PHP request to the FastCGI server specified by fastcgi_pass wordpress:9000;.
+NGINX forwards the PHP request to the FastCGI server specified by fastcgi_pass wordpress:9000;.
+NGINX forwards the PHP request to the FastCGI server specified by fastcgi_pass wordpress:9000;.
+The wordpress:9000 address points to the PHP-FPM server named wordpress listening on port 9000.
+The wordpress:9000 address points to the PHP-FPM server named wordpress listening on port 9000.
+The wordpress:9000 address points to the PHP-FPM server named wordpress listening on port 9000.
+PHP-FPM Processing:
+PHP-FPM Processing:
+PHP-FPM Processing:
+
+
+
+PHP-FPM receives the request from NGINX.  
+PHP-FPM receives the request from NGINX.  
+PHP-FPM receives the request from NGINX.  
+PHP-FPM executes the PHP script corresponding to the requested file.  
+PHP-FPM executes the PHP script corresponding to the requested file.  
+PHP-FPM executes the PHP script corresponding to the requested file.  
+The PHP script generates HTML content dynamically, which PHP-FPM sends back to NGINX.  
+The PHP script generates HTML content dynamically, which PHP-FPM sends back to NGINX.  
+The PHP script generates HTML content dynamically, which PHP-FPM sends back to NGINX.  
+NGINX Response:  
+NGINX Response:  
+NGINX Response:  
+
+
+
+NGINX receives the HTML content from PHP-FPM.  
+NGINX receives the HTML content from PHP-FPM.  
+NGINX receives the HTML content from PHP-FPM.  
+NGINX sends the HTML response back to the client that made the initial request.  
+NGINX sends the HTML response back to the client that made the initial request.  
+NGINX sends the HTML response back to the client that made the initial request.  
+This process allows NGINX to efficiently handle both static content and dynamic PHP scripts by offloading PHP execution   to PHP-FPM. It improves performance and scalability by separating the responsibilities of serving web content and executing PHP code.  
+This process allows NGINX to efficiently handle both static content and dynamic PHP scripts by offloading PHP execution   to PHP-FPM. It improves performance and scalability by separating the responsibilities of serving web content and executing PHP code.  
+This process allows NGINX to efficiently handle both static content and dynamic PHP scripts by offloading PHP execution   to PHP-FPM. It improves performance and scalability by separating the responsibilities of serving web content and executing PHP code.  
+This process allows NGINX to efficiently handle both static content and dynamic PHP scripts by offloading PHP execution   to PHP-FPM. It improves performance and scalability by separating the responsibilities of serving web content and executing PHP code.  
+This process allows NGINX to efficiently handle both static content and dynamic PHP scripts by offloading PHP execution   to PHP-FPM. It improves performance and scalability by separating the responsibilities of serving web content and executing PHP code.  
+This process allows NGINX to efficiently handle both static content and dynamic PHP scripts by offloading PHP execution   to PHP-FPM. It improves performance and scalability by separating the responsibilities of serving web content and executing PHP code.  
+This process allows NGINX to efficiently handle both static content and dynamic PHP scripts by offloading PHP execution   to PHP-FPM. It improves performance and scalability by separating the responsibilities of serving web content and executing PHP code.  

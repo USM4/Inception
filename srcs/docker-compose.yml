@@ -1,4 +1,4 @@
-version: '3'
+version: '3.8'
 services:
   nginx:
     image: nginx
@@ -11,7 +11,7 @@ services:
     env_file: .env
     volumes:
       - wordpress:/var/www/html
-    restart: on-failure
+    restart: always
     ports:
       - "443:443"
 
@@ -24,20 +24,20 @@ services:
     env_file: .env
     volumes:
       - mariadb:/var/lib/mysql
-    restart: on-failure
+    restart: always
 
   wordpress:
     depends_on:
       - mariadb
     image: wordpress
     container_name: wordpress
-    networks: 
+    networks:
       - inception
     build: ./requirements/wordpress
     env_file: .env
     volumes:
       - wordpress:/var/www/html
-    restart: on-failure
+    restart: always
 
 volumes:
   wordpress:

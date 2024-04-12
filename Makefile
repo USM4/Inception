@@ -6,6 +6,6 @@ all:
 clean-imgs:
 	docker rmi -f $$(docker image ls)
 clean-containers-volumes:
-	docker rm -f $$(docker ps -aq)
+	docker rm -vf $$(docker ps -aq)
 
-fclean: clean-containers-volumes clean-imgs
+fclean: clean-imgs clean-containers-volumes
