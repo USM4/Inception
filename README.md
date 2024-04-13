@@ -84,3 +84,13 @@ This process allows NGINX to efficiently handle both static content and dynamic 
 This process allows NGINX to efficiently handle both static content and dynamic PHP scripts by offloading PHP execution   to PHP-FPM. It improves performance and scalability by separating the responsibilities of serving web content and executing PHP code.  
 This process allows NGINX to efficiently handle both static content and dynamic PHP scripts by offloading PHP execution   to PHP-FPM. It improves performance and scalability by separating the responsibilities of serving web content and executing PHP code.  
 This process allows NGINX to efficiently handle both static content and dynamic PHP scripts by offloading PHP execution   to PHP-FPM. It improves performance and scalability by separating the responsibilities of serving web content and executing PHP code.  
+
+
+Namespaces: Linux namespaces provide isolation mechanisms for processes, filesystems, network interfaces, and other   resources. Docker uses namespaces to create separate environments for containers, ensuring that each container has its   own isolated view of the system.  
+cgroups (Control Groups): cgroups allow the Docker daemon to limit and manage the resource usage of containers,   including CPU, memory, and I/O bandwidth. Docker uses cgroups to enforce resource constraints and isolation between   containers, preventing one container from consuming excessive resources and impacting others.  
+Container Runtime:  
+  
+While Docker itself provides the high-level interface and management tools for containers, the actual creation and   management of container processes are delegated to a container runtime.  
+Docker's default container runtime is containerd, a lightweight and efficient runtime that handles the low-level   container operations such as starting and stopping container processes, managing container filesystems, and interacting   with the Linux kernel features.  
+Containerd interfaces with the Linux kernel directly to create and manage containers using kernel features like   namespaces and cgroups.  
+In summary, while Docker provides the user-friendly interface and management tools for working with containers, the   creation and management of containers at a low level are handled by components like the Docker daemon (dockerd), the   container runtime (e.g., containerd), and the underlying Linux kernel features such as namespaces and cgroups.  

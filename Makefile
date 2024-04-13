@@ -8,4 +8,4 @@ clean-imgs:
 clean-containers-volumes:
 	docker rm -vf $$(docker ps -aq)
 
-fclean: clean-imgs clean-containers-volumes
+fclean: clean-containers-volumes clean-imgs
