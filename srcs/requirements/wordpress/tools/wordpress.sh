@@ -7,6 +7,7 @@ curl -o wp-cli.phar https://raw.githubusercontent.com/wp-cli/builds/gh-pages/pha
 sed -i 's|^listen =.*|listen = wordpress:9000|' /etc/php/7.4/fpm/pool.d/www.conf
 
 chmod +x wp-cli.phar
+.
 mv wp-cli.phar /usr/local/bin/wp
 
 mkdir -p /run/php
