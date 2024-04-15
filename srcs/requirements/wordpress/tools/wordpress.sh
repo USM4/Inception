@@ -17,7 +17,7 @@ cd var/www/html
 wp core download --allow-root
 mv wp-config-sample.php wp-config.php
 
-wp config set SERVER_PORT 3306 --allow-root
+# wp config set SERVER_PORT 3306 --allow-root
 wp config set DB_NAME $DB_NAME --allow-root --path=/var/www/html
 wp config set DB_USER $DB_USER --allow-root --path=/var/www/html
 wp config set DB_PASSWORD $DB_PASSWORD --allow-root --path=/var/www/html

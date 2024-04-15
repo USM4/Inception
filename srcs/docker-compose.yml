@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   nginx:
-    image: nginx
+    image: nginx:oredoine
     container_name: nginx
     networks:
       - inception
@@ -16,7 +16,7 @@ services:
       - "443:443"
 
   mariadb:
-    image: mariadb
+    image: mariadb:oredoine
     container_name: mariadb
     networks:
       - inception
@@ -29,7 +29,7 @@ services:
   wordpress:
     depends_on:
       - mariadb
-    image: wordpress
+    image: wordpress:oredoine
     container_name: wordpress
     networks:
       - inception
