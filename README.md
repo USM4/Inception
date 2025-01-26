@@ -29,10 +29,6 @@ TLS (Transport Layer Security) and SSL (Secure Sockets Layer) are cryptographic 
   
 MariaDB Access Instructions  
 * Enter the container:  
-  
-* bash  
-* Copy  
-* Edit  
 * docker exec -it <container_name> bash  
 * Access MariaDB:  
   
