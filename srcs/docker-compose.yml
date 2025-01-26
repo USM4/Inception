@@ -16,7 +16,7 @@ services:
       - "443:443"
 
   mariadb:
-    image: mariadb:oredoine
+    image: mariadb:oredoine  
     container_name: mariadb
     networks:
       - inception

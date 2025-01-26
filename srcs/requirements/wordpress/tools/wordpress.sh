@@ -29,4 +29,4 @@ wp user create $WP_USER $WP_USER_EMAIL --role=author --user_pass=$WP_USER_PASSWO
 
 /usr/sbin/php-fpm7.4 -F
 
-# sleep infinity
+# sleep infinity    

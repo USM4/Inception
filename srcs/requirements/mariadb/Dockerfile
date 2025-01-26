@@ -13,5 +13,5 @@ COPY tools/maria.sh /
 RUN chmod +x maria.sh
 
 CMD ["./maria.sh"]
-
+  
 # CMD ["sleep", "infinity"]

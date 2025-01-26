@@ -14,4 +14,4 @@ mysql -u root -p"$DB_ROOT_PWD" -e "FLUSH PRIVILEGES;"
 
 mysqladmin -u root -p"$DB_ROOT_PWD" shutdown
 echo "Database configuration completed."
-exec mysqld_safe
+exec mysqld_safe  

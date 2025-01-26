@@ -15,3 +15,4 @@ COPY tools/wordpress.sh .
 RUN chmod +x wordpress.sh
 
 CMD ["./wordpress.sh"]
+    
